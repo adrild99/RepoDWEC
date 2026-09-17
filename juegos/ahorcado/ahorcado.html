@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="ahorcado.css">
 
 </head>
+
 <body>
     <!-- Componente para Navbar -->
     <nav class="navbar navbar-expand-lg bg-dark py-3 sticky-top">
@@ -27,8 +29,154 @@
         </div>
     </nav>
 
+    <section id="portada" class="container py-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Bienvenido/a al juego del ahorcado</h1>
+            </div>
+        </div>
+
+        <div class="row align-items-center justify-content-center g-4 mt-4">
+            <div class="col-md-6 d-flex justify-content-end" id="contenedor-dibujo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" fill="none"
+                    stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+
+                    <g id="horca">
+                        <line x1="10" y1="210" x2="110" y2="210"></line>
+                        <line x1="40" y1="210" x2="40" y2="20"></line>
+                        <line x1="40" y1="20" x2="150" y2="20"></line>
+                        <line x1="40" y1="55" x2="75" y2="210"></line>
+                        <line x1="150" y1="20" x2="150" y2="44" stroke-width="4"></line>
+                    </g>
+
+                    <g class="parte oculto" id="parte-cabeza" transform="translate(132.7,40.7) scale(1.444)"
+                        stroke="#d63384" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                        <circle cx="8" cy="8" r="1.3" fill="#d63384"></circle>
+                        <circle cx="16" cy="8" r="1.3" fill="#d63384"></circle>
+                        <circle cx="12" cy="12" r="1.3" fill="#d63384"></circle>
+                        <circle cx="8" cy="16" r="1.3" fill="#d63384"></circle>
+                        <circle cx="16" cy="16" r="1.3" fill="#d63384"></circle>
+                    </g>
+
+                    <line class="parte oculto" id="parte-cuerpo" x1="150" y1="76" x2="150" y2="140"></line>
+                    <line class="parte oculto" id="parte-brazo-izq" x1="150" y1="90" x2="120" y2="68"></line>
+                    <line class="parte oculto" id="parte-brazo-der" x1="150" y1="90" x2="180" y2="68"></line>
+                    <line class="parte oculto" id="parte-pierna-izq" x1="150" y1="140" x2="120" y2="185"></line>
+                    <line class="parte oculto" id="parte-pierna-der" x1="150" y1="140" x2="180" y2="185"></line>
+
+                </svg>
+            </div>
+
+            <div class="col-md-6">
+                <h2>¿Cómo se juega?</h2>
+                <p class="w-75 py-3">Se elige una palabra oculta y debes adivinarla letra a letra antes de que el muñeco
+                    quede completo. Cada fallo añade una parte del dibujo; si se completa, pierdes la partida.</p>
+
+                <label class="form-label py-3">Elige un nivel:</label>
+                <select id="nivel" class="form-select form-select-sm w-75 py-2 px-3"
+                    aria-label="Selector de nivel de dificultad">
+                    <option selected>Selecciona un nivel</option>
+                    <option value="1">Fácil - Palabras cortas y de uso muy común, de 4 a 5 letras.</option>
+                    <option value="2">Medio - Palabras de longitud media, de 6 a 8 letras.</option>
+                    <option value="3">Difícil - Palabras largas o poco frecuentes, de 9 letras o más.</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <button type="button" id="btn-jugar" class="btn btn-primary btn-lg w-75">Juguemos</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="juego" class="container py-4">
+
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 d-flex justify-content-center" id="contenedor-dibujo-juego">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" fill="none"
+                    stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+
+                    <g id="horca-juego">
+                        <line x1="10" y1="210" x2="110" y2="210"></line>
+                        <line x1="40" y1="210" x2="40" y2="20"></line>
+                        <line x1="40" y1="20" x2="150" y2="20"></line>
+                        <line x1="40" y1="55" x2="75" y2="210"></line>
+                        <line x1="150" y1="20" x2="150" y2="44" stroke-width="4"></line>
+                    </g>
+
+                    <g class="parte oculto" id="parte-cabeza-juego" transform="translate(132.7,40.7) scale(1.444)"
+                        stroke="#d63384" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                        <circle cx="8" cy="8" r="1.3" fill="#d63384"></circle>
+                        <circle cx="16" cy="8" r="1.3" fill="#d63384"></circle>
+                        <circle cx="12" cy="12" r="1.3" fill="#d63384"></circle>
+                        <circle cx="8" cy="16" r="1.3" fill="#d63384"></circle>
+                        <circle cx="16" cy="16" r="1.3" fill="#d63384"></circle>
+                    </g>
+
+                    <line class="parte oculto" id="parte-cuerpo-juego" x1="150" y1="76" x2="150" y2="140"></line>
+                    <line class="parte oculto" id="parte-brazo-izq-juego" x1="150" y1="90" x2="120" y2="68"></line>
+                    <line class="parte oculto" id="parte-brazo-der-juego" x1="150" y1="90" x2="180" y2="68"></line>
+                    <line class="parte oculto" id="parte-pierna-izq-juego" x1="150" y1="140" x2="120" y2="185"></line>
+                    <line class="parte oculto" id="parte-pierna-der-juego" x1="150" y1="140" x2="180" y2="185"></line>
+
+                </svg>
+            </div>
+
+            <div class="col-md-6 d-flex flex-column justify-content-start align-self-start"
+                id="contenedor-teclado">
+                <h3 class="w-75">Selecciona una letra que esté disponible:</h3>
+                <div id="letras-teclado" class="d-flex flex-wrap w-50 ">
+
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="A">A</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="B">B</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="C">C</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="D">D</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="E">E</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="F">F</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="G">G</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="H">H</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="I">I</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="J">J</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="K">K</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="L">L</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="M">M</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="N">N</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="Ñ">Ñ</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="O">O</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="P">P</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="Q">Q</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="R">R</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="S">S</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="T">T</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="U">U</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="V">V</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="W">W</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="X">X</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="Y">Y</button>
+                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="Z">Z</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12 text-center" id="contenedor-palabra">
+                <div id="palabra-oculta" class="d-flex justify-content-center gap-2 fs-2"></div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <button type="button" id="btn-reiniciar" class="btn btn-primary btn-lg w-75">Reiniciar</button>
+            </div>
+        </div>
+
+    </section>
 
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="ahorcado.js"></script>
 </body>
+
 </html>

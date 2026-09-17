@@ -8,3 +8,18 @@
 .navbar-brand:hover {
     color: white;
 }
+
+.btn-primary {
+    --bs-btn-bg: var(--bs-pink);
+    --bs-btn-border-color: var(--bs-pink);
+    --bs-btn-hover-bg: #ad2a6c;
+    --bs-btn-hover-border-color: #ad2a6c;
+}
+
+.btn-primary:hover {
+    border-width: 1px;
+}
+
+#juego .oculto {
+    display: none;
+}

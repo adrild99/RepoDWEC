@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Horca: siempre visible -->
+    <g id="horca">
+        <line x1="10" y1="210" x2="110" y2="210"></line>
+        <line x1="40" y1="210" x2="40" y2="20"></line>
+        <line x1="40" y1="20" x2="150" y2="20"></line>
+        <line x1="40" y1="55" x2="75" y2="210"></line>
+        <line x1="150" y1="20" x2="150" y2="44" stroke-width="4"></line>
+    </g>
+
+    <!-- Partes del muñeco: ocultas por defecto, una por cada fallo -->
+    <g class="parte oculto" id="parte-cabeza" transform="translate(132.7,40.7) scale(1.444)" stroke="#d63384" stroke-width="2">
+        <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+        <circle cx="8" cy="8" r="1.3" fill="#d63384"></circle>
+        <circle cx="16" cy="8" r="1.3" fill="#d63384"></circle>
+        <circle cx="12" cy="12" r="1.3" fill="#d63384"></circle>
+        <circle cx="8" cy="16" r="1.3" fill="#d63384"></circle>
+        <circle cx="16" cy="16" r="1.3" fill="#d63384"></circle>
+    </g>
+
+    <line class="parte oculto" id="parte-cuerpo" x1="150" y1="76" x2="150" y2="140"></line>
+    <line class="parte oculto" id="parte-brazo-izq" x1="150" y1="90" x2="120" y2="68"></line>
+    <line class="parte oculto" id="parte-brazo-der" x1="150" y1="90" x2="180" y2="68"></line>
+    <line class="parte oculto" id="parte-pierna-izq" x1="150" y1="140" x2="120" y2="185"></line>
+    <line class="parte oculto" id="parte-pierna-der" x1="150" y1="140" x2="180" y2="185"></line>
+
+</svg>
