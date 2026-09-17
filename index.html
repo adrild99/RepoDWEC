@@ -1,16 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Prueba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hub</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
-    <button class="btn btn-primary m-5">Probando Bootstrap</button>
 
+<body>
+
+    <!-- Componente para Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-danger" href="#">Game Hub</a>
+        </div>
+    </nav>
+
+    <!-- Contenedor con las tarjetas de los juegos, 4 por fila -->
+    <div class="container py-5 px-1">
+        <div class="row g-5">
+
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="assets/img/juego-del-ahorcado.png" class="card-img-top" alt="Icono del juego Ahorcado">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Ahorcado</h5>
+                        <p class="card-text">Enfrentate a la máquina en el apasionado juego del ahorcado.</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Jugar!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="assets/img/crucigrama.png" class="card-img-top" alt="Icono del juego Ahorcado">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Crucigramas</h5>
+                        <p class="card-text">Pon a prueba tu vocabulario completando las casillas con las pistas dadas.</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Jugar!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="assets/img/BlackStories.png" class="card-img-top" alt="Icono del juego Ahorcado">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Black Stories</h5>
+                        <p class="card-text">Descubre qué ha ocurrido haciendo preguntas que solo se responden con sí o no.</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Jugar!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="assets/img/wordle.png" class="card-img-top" alt="Icono del juego Ahorcado">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Wordle</h5>
+                        <p class="card-text">Descubre la palabra secreta antes de agotar tus intentos.</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Jugar!</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="assets/img/tres-en-raya.png" class="card-img-top" alt="Icono del juego Ahorcado">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">3 en raya</h5>
+                        <p class="card-text">Descubre la palabra secreta antes de agotar tus intentos.</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Jugar!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="assets/img/quizas.png" class="card-img-top" alt="Icono del juego Ahorcado">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Quiz Trivial</h5>
+                        <p class="card-text">Descubre la palabra secreta antes de agotar tus intentos.</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Jugar!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="assets/img/pasatiempo.png" class="card-img-top" alt="Icono del juego Ahorcado">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Sudoku</h5>
+                        <p class="card-text">Descubre la palabra secreta antes de agotar tus intentos.</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Jugar!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img src="assets/img/serpiente.png" class="card-img-top" alt="Icono del juego Ahorcado">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Snake</h5>
+                        <p class="card-text">Descubre la palabra secreta antes de agotar tus intentos.</p>
+                        <a href="#" class="btn btn-primary w-100 mt-auto">Jugar!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="index.js" defer></script>
 </body>
+
 </html>

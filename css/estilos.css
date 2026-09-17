@@ -1,0 +1,20 @@
+.btn-primary {
+    --bs-btn-bg: #6f42c1;
+    --bs-btn-border-color: #6f42c1;
+    --bs-btn-hover-bg: #400d99;
+    --bs-btn-hover-border-color: #05020a;
+}
+
+.card {
+    --bs-card-border-radius: 1rem;
+}
+
+.card-title {
+    font-size: 1.9rem;
+}
+
+.card-img-top {
+    height: 180px;
+    object-fit: contain;
+    padding: 1.5rem;
+}
