@@ -1,8 +1,21 @@
 .btn-primary {
-    --bs-btn-bg: #6f42c1;
-    --bs-btn-border-color: #6f42c1;
-    --bs-btn-hover-bg: #400d99;
-    --bs-btn-hover-border-color: #05020a;
+    --bs-btn-bg: var(--bs-pink);
+    --bs-btn-border-color: var(--bs-pink);
+    --bs-btn-hover-bg: #ad2a6c;
+    --bs-btn-hover-border-color: #ad2a6c;
+}
+
+.navbar-brand {
+    color: var(--bs-pink);
+    transition: color 0.9s;
+}
+
+.page-link {
+    color: var(--bs-pink);
+}
+
+.navbar-brand:hover {
+    color: white;
 }
 
 .btn-primary:hover {
