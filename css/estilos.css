@@ -14,12 +14,16 @@
     color: var(--bs-pink);
 }
 
+.navbar-brand:focus {
+    color: var(--bs-pink);
+}
+
 .navbar-brand:hover {
     color: white;
 }
 
 .btn-primary:hover {
-    border-width: 2px;
+    border-width: 1px;
 }
 
 .card {
