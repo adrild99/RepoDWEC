@@ -27,6 +27,30 @@
         </div>
     </nav>
 
+    <section class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5 text-center">
+                <h1>3 en Raya</h1>
+                <p class="lead mb-4">Juega por turnos: coloca tu ficha y gana si consigues alinear tres en raya.</p>
+
+                <div class="row row-cols-3 g-2" id="tablero">
+                    <div class="col"><button type="button" class="btn btn-outline-secondary w-100 h-100 fs-1 celda" data-celda="0"></button></div>
+                    <div class="col"><button type="button" class="btn btn-outline-secondary w-100 h-100 fs-1 celda" data-celda="1"></button></div>
+                    <div class="col"><button type="button" class="btn btn-outline-secondary w-100 h-100 fs-1 celda" data-celda="2"></button></div>
+                    <div class="col"><button type="button" class="btn btn-outline-secondary w-100 h-100 fs-1 celda" data-celda="3"></button></div>
+                    <div class="col"><button type="button" class="btn btn-outline-secondary w-100 h-100 fs-1 celda" data-celda="4"></button></div>
+                    <div class="col"><button type="button" class="btn btn-outline-secondary w-100 h-100 fs-1 celda" data-celda="5"></button></div>
+                    <div class="col"><button type="button" class="btn btn-outline-secondary w-100 h-100 fs-1 celda" data-celda="6"></button></div>
+                    <div class="col"><button type="button" class="btn btn-outline-secondary w-100 h-100 fs-1 celda" data-celda="7"></button></div>
+                    <div class="col"><button type="button" class="btn btn-outline-secondary w-100 h-100 fs-1 celda" data-celda="8"></button></div>
+                </div>
+
+                <p class="mt-4 fs-5">Turno de: <span id="turno-actual" class="fw-bold">X</span></p>
+                <p id="mensaje-final" class="fs-5 fw-bold"></p>
+                <button type="button" id="btn-reiniciar" class="btn btn-primary w-100">Reiniciar</button>
+            </div>
+        </div>
+    </section>
 
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="3raya.js"></script>
