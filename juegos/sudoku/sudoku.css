@@ -8,3 +8,211 @@
 .navbar-brand:hover {
     color: white;
 }
+
+body {
+    background: linear-gradient(180deg, #f8f9fa 0%, #fdf2f8 100%);
+    min-height: 100vh;
+}
+
+#juego {
+    max-width: 1000px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* ---------- Botón rosa ---------- */
+.btn-rosa {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #d63384;
+    --bs-btn-border-color: #d63384;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ab296a;
+    --bs-btn-hover-border-color: #ab296a;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ab296a;
+    --bs-btn-active-border-color: #ab296a;
+    --bs-btn-focus-shadow-rgb: 214, 51, 132;
+}
+
+/* ---------- Niveles ---------- */
+#niveles .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    border-radius: 0.75rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+#niveles .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+#niveles .nav-link.active {
+    color: white;
+    background-color: var(--bs-pink);
+}
+#niveles .contador {
+    opacity: 0.7;
+}
+
+/* ---------- Tablero ---------- */
+#tablero {
+    --tamano: 9;
+    display: grid;
+    grid-template-columns: repeat(var(--tamano), 1fr);
+    max-width: min(480px, calc(var(--tamano) * 80px));
+    margin: 0 auto;
+    border: 3px solid var(--bs-dark);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: white;
+}
+
+.celda {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 1px solid var(--bs-gray-300);
+    text-align: center;
+    font-size: calc(min(480px, 100vw - 4rem) / var(--tamano) * 0.45);
+    font-weight: 600;
+    color: var(--bs-pink);
+    background-color: white;
+    caret-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+.celda:focus {
+    outline: none;
+}
+
+.borde-derecha {
+    border-right: 3px solid var(--bs-dark);
+}
+.borde-abajo {
+    border-bottom: 3px solid var(--bs-dark);
+}
+
+/* El orden importa: las de abajo ganan a las de arriba */
+.celda.fija {
+    color: var(--bs-dark);
+    font-weight: 700;
+    background-color: var(--bs-gray-100);
+}
+.celda.resaltada {
+    background-color: rgba(214, 51, 132, 0.07);
+}
+.celda.mismo-numero {
+    background-color: rgba(214, 51, 132, 0.2);
+}
+.celda.seleccionada {
+    background-color: rgba(214, 51, 132, 0.35);
+}
+.celda.pista {
+    color: var(--bs-success);
+}
+.celda.error {
+    color: var(--bs-danger);
+    background-color: var(--bs-danger-bg-subtle);
+}
+
+/* Animación al ganar */
+.celebrar .celda {
+    animation: celebrar 0.6s ease both;
+}
+@keyframes celebrar {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.15); background-color: rgba(214, 51, 132, 0.4); }
+    100% { transform: scale(1); }
+}
+
+/* ---------- Panel lateral ---------- */
+.estadistica {
+    background-color: var(--bs-dark);
+    color: white;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    text-align: center;
+}
+.estadistica .etiqueta {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+}
+.estadistica .valor {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--bs-pink);
+}
+
+.progress-bar {
+    background-color: var(--bs-pink);
+    transition: width 0.3s;
+}
+
+#teclado {
+    --columnas: 3;
+    display: grid;
+    grid-template-columns: repeat(var(--columnas), 1fr);
+    gap: 0.5rem;
+}
+.tecla {
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+}
+.tecla small {
+    position: absolute;
+    top: 0.15rem;
+    right: 0.45rem;
+    font-size: 0.65rem;
+    opacity: 0.6;
+}
+.tecla.completa {
+    opacity: 0.35;
+}
+.tecla-borrar {
+    grid-column: 1 / -1;
+    font-size: 1rem;
+}
+
+/* ---------- Paginación ---------- */
+.pagination {
+    --bs-pagination-color: var(--bs-pink);
+    --bs-pagination-hover-color: #ab296a;
+    --bs-pagination-focus-color: #ab296a;
+    --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(214, 51, 132, 0.25);
+    --bs-pagination-active-bg: var(--bs-pink);
+    --bs-pagination-active-border-color: var(--bs-pink);
+    gap: 0.25rem 0;
+}
+.page-item.resuelto .page-link {
+    position: relative;
+}
+.page-item.resuelto .page-link::after {
+    content: '✓';
+    position: absolute;
+    top: -0.45rem;
+    right: -0.3rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--bs-success);
+    color: white;
+    font-size: 0.65rem;
+    line-height: 1rem;
+    text-align: center;
+    z-index: 3;
+}
+
+/* ---------- Modal ---------- */
+.trofeo {
+    font-size: 4.5rem;
+    animation: botar 1s ease infinite alternate;
+}
+@keyframes botar {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}

@@ -27,8 +27,126 @@
         </div>
     </nav>
 
+    <section class="container py-5">
+        <div class="text-center mb-4">
+            <h1 class="display-5 fw-bold">Sudoku</h1>
+            <p class="lead text-body-secondary mb-0">Rellena el tablero sin repetir número en ninguna fila, columna ni bloque.</p>
+        </div>
+
+        <div class="card shadow-lg border-0 mx-auto" id="juego">
+            <!-- Niveles -->
+            <div class="card-header bg-dark border-0 p-3">
+                <ul class="nav nav-pills nav-fill gap-2" id="niveles">
+                    <li class="nav-item">
+                        <button type="button" class="nav-link active" data-nivel="facil">
+                            Fácil <span class="badge text-bg-light ms-1">4×4</span>
+                            <span class="d-block small contador" data-contador="facil">0/10 resueltos</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="nav-link" data-nivel="medio">
+                            Medio <span class="badge text-bg-light ms-1">6×6</span>
+                            <span class="d-block small contador" data-contador="medio">0/10 resueltos</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="nav-link" data-nivel="dificil">
+                            Difícil <span class="badge text-bg-light ms-1">9×9</span>
+                            <span class="d-block small contador" data-contador="dificil">0/10 resueltos</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card-body p-4">
+                <div class="row g-4 align-items-start">
+                    <!-- Tablero -->
+                    <div class="col-lg-7">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="h5 mb-0" id="titulo-sudoku">Fácil · Sudoku 1</h2>
+                            <span class="badge rounded-pill text-bg-success d-none" id="badge-resuelto">✓ Resuelto</span>
+                        </div>
+                        <div id="tablero"></div>
+                    </div>
+
+                    <!-- Panel lateral -->
+                    <div class="col-lg-5">
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <div class="estadistica">
+                                    <span class="etiqueta">Tiempo</span>
+                                    <span class="valor" id="tiempo">00:00</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="estadistica">
+                                    <span class="etiqueta">Pistas</span>
+                                    <span class="valor" id="pistas-restantes">3</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small text-body-secondary mb-1">
+                                <span>Progreso</span>
+                                <span id="progreso-texto">0/0</span>
+                            </div>
+                            <div class="progress" role="progressbar" aria-label="Progreso del sudoku" id="progreso">
+                                <div class="progress-bar progress-bar-striped" id="barra-progreso" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <div id="teclado" class="mb-3"></div>
+
+                        <div class="d-grid gap-2">
+                            <button type="button" id="btn-comprobar" class="btn btn-rosa btn-lg">Comprobar</button>
+                            <div class="d-flex gap-2">
+                                <button type="button" id="btn-pista" class="btn btn-outline-dark w-100">💡 Pista</button>
+                                <button type="button" id="btn-reiniciar" class="btn btn-outline-secondary w-100">↺ Reiniciar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginación -->
+            <div class="card-footer bg-body-tertiary border-0 py-3">
+                <nav aria-label="Elegir sudoku">
+                    <ul class="pagination justify-content-center flex-wrap mb-0" id="paginacion"></ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avisos (toast) -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="aviso" class="toast align-items-center border-0" role="status" aria-live="polite" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body fw-semibold" id="aviso-texto"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de victoria -->
+    <div class="modal fade" id="modal-victoria" tabindex="-1" aria-labelledby="titulo-victoria" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 text-center">
+                <div class="modal-body p-5">
+                    <div class="trofeo mb-3">🏆</div>
+                    <h2 class="fw-bold" id="titulo-victoria">¡Sudoku resuelto!</h2>
+                    <p class="lead mb-4" id="resumen-victoria"></p>
+                    <div class="d-flex gap-2 justify-content-center">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-rosa" id="btn-siguiente">Siguiente sudoku →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="sudokus.js"></script>
     <script src="sudoku.js"></script>
 </body>
 </html>

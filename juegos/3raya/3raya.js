@@ -43,25 +43,37 @@ celdas.forEach(function (celda) {
 });
 
 function hayGanador() {
-    return combinacionesGanadoras.some(function (combinacion) {
-        const [a, b, c] = combinacion;
+    for (let i = 0; i < combinacionesGanadoras.length; i++) {
+        const combinacion = combinacionesGanadoras[i];
+
+        const a = combinacion[0];
+        const b = combinacion[1];
+        const c = combinacion[2];
+
         const valorA = celdas[a].textContent;
         const valorB = celdas[b].textContent;
         const valorC = celdas[c].textContent;
-        return valorA !== '' && valorA === valorB && valorB === valorC;
-    });
+
+        if (valorA !== '' && valorA === valorB && valorB === valorC) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function tableroLleno() {
-    return Array.from(celdas).every(function (celda) {
-        return celda.textContent !== '';
-    });
+    for (let i = 0; i < celdas.length; i++) {
+        if (celdas[i].textContent === '') {
+            return false;
+        }
+    }
+    return true;
 }
 
 btnReiniciar.addEventListener('click', function () {
-    celdas.forEach(function (celda) {
-        celda.textContent = '';
-    });
+    for (let i = 0; i < celdas.length; i++) {
+        celdas[i].textContent = '';
+    }
     turnoActual = 'X';
     juegoTerminado = false;
     turnoTexto.textContent = turnoActual;
