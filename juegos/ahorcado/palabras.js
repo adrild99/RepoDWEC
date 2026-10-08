@@ -1,0 +1,11 @@
+// Palabras de cada nivel, en mayúsculas y sin tildes
+// La clave es el value del selector de nivel del HTML
+
+const palabras = {
+    1: ['CASA', 'PERRO', 'GATO', 'MESA', 'LIBRO', 'SILLA', 'PLATO', 'LUNA', 'FRESA', 'NUBE',
+        'PATO', 'LECHE', 'PERA', 'MANO', 'BARCO', 'CAMA', 'RELOJ', 'NIÑO', 'PIANO', 'QUESO'],
+    2: ['VENTANA', 'ESCUELA', 'CABALLO', 'MONTAÑA', 'GUITARRA', 'PLANETA', 'CAMISETA', 'TORTUGA', 'JIRAFA', 'PALOMA',
+        'COCINA', 'BOMBERO', 'ZAPATO', 'PELOTA', 'MANZANA', 'CUCHARA', 'PAJARITA', 'CEREZA', 'NARANJA', 'PISCINA'],
+    3: ['CHOCOLATE', 'BIBLIOTECA', 'DINOSAURIO', 'ORDENADOR', 'TELEVISOR', 'AYUNTAMIENTO', 'ROMPECABEZAS', 'CARRETERA', 'ARQUITECTO', 'PERIODISTA',
+        'DESARROLLO', 'NAVEGADOR', 'CALENDARIO', 'CUMPLEAÑOS', 'ENREDADERA', 'PARACAIDISTA', 'CAMPEONATO', 'ESCRITORIO', 'EXCAVADORA', 'TRANSPORTE']
+};

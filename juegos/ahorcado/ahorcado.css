@@ -23,3 +23,11 @@
 #juego .oculto {
     display: none;
 }
+/* Cada hueco de la palabra: una raya con la letra encima */
+.hueco {
+    display: inline-block;
+    min-width: 1.4em;
+    border-bottom: 3px solid currentColor;
+    text-align: center;
+    line-height: 1.3;
+}

@@ -136,13 +136,18 @@
 
         <div class="row mt-4">
             <div class="col-12 text-center" id="contenedor-palabra">
-                <div id="palabra-oculta" class="d-flex justify-content-center gap-2 fs-2">_ _ _ _ _</div>
+                <div id="palabra-oculta" class="d-flex flex-wrap justify-content-center gap-2 fs-2"></div>
+                <p class="fs-5 mt-3">Fallos: <span id="fallos" class="fw-bold">0</span>/6</p>
+                <div id="mensaje-final" class="alert d-none w-75 mx-auto fs-5" role="alert"></div>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-12 text-center">
-                <button type="button" id="btn-reiniciar" class="btn btn-primary btn-lg w-75">Reiniciar</button>
+        <div class="row mt-2 g-2 justify-content-center">
+            <div class="col-md-5">
+                <button type="button" id="btn-reiniciar" class="btn btn-primary btn-lg w-100">Reiniciar</button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" id="btn-cambiar-nivel" class="btn btn-outline-secondary btn-lg w-100">Cambiar de nivel</button>
             </div>
         </div>
 
@@ -150,6 +155,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="palabras.js"></script>
     <script src="ahorcado.js"></script>
 </body>
 
