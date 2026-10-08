@@ -76,11 +76,12 @@
                 <label class="form-label py-3">Elige un nivel:</label>
                 <select id="nivel" class="form-select form-select-sm w-75 py-2 px-3"
                     aria-label="Selector de nivel de dificultad">
-                    <option selected>Selecciona un nivel</option>
+                    <option value="" selected>Selecciona un nivel</option>
                     <option value="1">Fácil - Palabras cortas y de uso muy común, de 4 a 5 letras.</option>
                     <option value="2">Medio - Palabras de longitud media, de 6 a 8 letras.</option>
                     <option value="3">Difícil - Palabras largas o poco frecuentes, de 9 letras o más.</option>
                 </select>
+                <div class="invalid-feedback">Elige un nivel para empezar a jugar.</div>
             </div>
         </div>
 
@@ -91,7 +92,7 @@
         </div>
     </section>
 
-    <section id="juego" class="container py-4">
+    <section id="juego" class="container py-4 d-none">
 
         <div class="row align-items-center justify-content-center">
             <div class="col-md-6 d-flex justify-content-center" id="contenedor-dibujo-juego">
@@ -128,35 +129,7 @@
             <div class="col-md-6 d-flex flex-column justify-content-start align-self-start"
                 id="contenedor-teclado">
                 <h3 class="w-75">Selecciona una letra que esté disponible:</h3>
-                <div id="letras-teclado" class="d-flex flex-wrap w-50 ">
-
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="A">A</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="B">B</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="C">C</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="D">D</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="E">E</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="F">F</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="G">G</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="H">H</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="I">I</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="J">J</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="K">K</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="L">L</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="M">M</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="N">N</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="Ñ">Ñ</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="O">O</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="P">P</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="Q">Q</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="R">R</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="S">S</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="T">T</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="U">U</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="V">V</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="W">W</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="X">X</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="Y">Y</button>
-                    <button type="button" class="btn btn-outline-secondary m-1" data-letra="Z">Z</button>
+                <div id="letras-teclado" class="d-flex flex-wrap w-50">
                 </div>
             </div>
         </div>
@@ -176,6 +149,7 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="ahorcado.js"></script>
 </body>
 
