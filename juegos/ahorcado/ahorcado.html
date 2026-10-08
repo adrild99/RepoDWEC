@@ -37,7 +37,7 @@
         </div>
 
         <div class="row align-items-center justify-content-center g-4 mt-4">
-            <div class="col-md-6 d-flex justify-content-end" id="contenedor-dibujo">
+            <div class="col-md-6 d-flex justify-content-center justify-content-md-end" id="contenedor-dibujo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" fill="none"
                     stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
 
@@ -95,7 +95,7 @@
     <section id="juego" class="container py-4 d-none">
 
         <div class="row align-items-center justify-content-center">
-            <div class="col-md-6 d-flex justify-content-center" id="contenedor-dibujo-juego">
+            <div class="col-md-6 order-1 d-flex justify-content-center" id="contenedor-dibujo-juego">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" fill="none"
                     stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
 
@@ -117,25 +117,23 @@
                         <circle cx="16" cy="16" r="1.3" fill="#d63384"></circle>
                     </g>
 
-                    <line class="parte oculto" id="parte-cuerpo-juego" x1="150" y1="76" x2="150" y2="140"></line>
-                    <line class="parte oculto" id="parte-brazo-izq-juego" x1="150" y1="90" x2="120" y2="68"></line>
-                    <line class="parte oculto" id="parte-brazo-der-juego" x1="150" y1="90" x2="180" y2="68"></line>
-                    <line class="parte oculto" id="parte-pierna-izq-juego" x1="150" y1="140" x2="120" y2="185"></line>
-                    <line class="parte oculto" id="parte-pierna-der-juego" x1="150" y1="140" x2="180" y2="185"></line>
+                    <line class="parte oculto" id="parte-cuerpo-juego" pathLength="1" x1="150" y1="76" x2="150" y2="140"></line>
+                    <line class="parte oculto" id="parte-brazo-izq-juego" pathLength="1" x1="150" y1="90" x2="120" y2="68"></line>
+                    <line class="parte oculto" id="parte-brazo-der-juego" pathLength="1" x1="150" y1="90" x2="180" y2="68"></line>
+                    <line class="parte oculto" id="parte-pierna-izq-juego" pathLength="1" x1="150" y1="140" x2="120" y2="185"></line>
+                    <line class="parte oculto" id="parte-pierna-der-juego" pathLength="1" x1="150" y1="140" x2="180" y2="185"></line>
 
                 </svg>
             </div>
 
-            <div class="col-md-6 d-flex flex-column justify-content-start align-self-start"
+            <div class="col-md-6 order-3 order-md-2 d-flex flex-column justify-content-start align-self-start"
                 id="contenedor-teclado">
-                <h3 class="w-75">Selecciona una letra que esté disponible:</h3>
-                <div id="letras-teclado" class="d-flex flex-wrap w-50">
+                <h3>Selecciona una letra que esté disponible:</h3>
+                <div id="letras-teclado" class="d-flex flex-wrap">
                 </div>
             </div>
-        </div>
 
-        <div class="row mt-4">
-            <div class="col-12 text-center" id="contenedor-palabra">
+            <div class="col-12 order-2 order-md-3 text-center mt-2 mt-md-4" id="contenedor-palabra">
                 <div id="palabra-oculta" class="d-flex flex-wrap justify-content-center gap-2 fs-2"></div>
                 <p class="fs-5 mt-3">Fallos: <span id="fallos" class="fw-bold">0</span>/6</p>
                 <div id="mensaje-final" class="alert d-none w-75 mx-auto fs-5" role="alert"></div>

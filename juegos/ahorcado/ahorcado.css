@@ -31,3 +31,97 @@
     text-align: center;
     line-height: 1.3;
 }
+
+/* ---------- Pantalla de juego ---------- */
+
+#contenedor-teclado h3 {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+#letras-teclado {
+    justify-content: center;
+}
+
+#letras-teclado .btn {
+    min-width: 2.6rem;
+    padding: 0.3rem 0.5rem;
+}
+
+/* En móvil el dibujo es más pequeño para que quepa todo sin hacer scroll */
+#contenedor-dibujo-juego svg {
+    width: 150px;
+    height: 150px;
+}
+
+#palabra-oculta {
+    font-size: 1.6rem !important;
+}
+
+#contenedor-palabra p {
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    #contenedor-dibujo-juego svg {
+        width: 220px;
+        height: 220px;
+    }
+
+    #contenedor-teclado h3 {
+        font-size: 1.75rem;
+        text-align: start;
+    }
+
+    #letras-teclado {
+        justify-content: flex-start;
+        max-width: 24rem;
+    }
+
+    #palabra-oculta {
+        font-size: 2rem !important;
+    }
+}
+
+/* ---------- Animación del muñeco al fallar ---------- */
+
+/* Las líneas se dibujan desde un extremo (pathLength="1" en el HTML) */
+#juego line.parte {
+    stroke-dasharray: 1;
+    animation: dibujar 0.6s ease-out;
+}
+
+/* La cabeza aparece creciendo desde su centro */
+#parte-cabeza-juego > * {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: aparecer 0.5s ease-out;
+}
+
+@keyframes dibujar {
+    from {
+        stroke-dashoffset: 1;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes aparecer {
+    0% {
+        transform: scale(0);
+    }
+    70% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #juego line.parte,
+    #parte-cabeza-juego > * {
+        animation: none;
+    }
+}

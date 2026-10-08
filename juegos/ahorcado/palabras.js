@@ -1,5 +1,4 @@
-// Palabras de cada nivel, en mayúsculas y sin tildes
-// La clave es el value del selector de nivel del HTML
+
 
 const palabras = {
     1: ['CASA', 'PERRO', 'GATO', 'MESA', 'LIBRO', 'SILLA', 'PLATO', 'LUNA', 'FRESA', 'NUBE',
