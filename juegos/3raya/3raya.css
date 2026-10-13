@@ -1,20 +1,4 @@
-.navbar-brand {
-    color: var(--bs-pink);
-    transition: color 0.9s;
-}
-.navbar-brand:focus {
-    color: var(--bs-pink);
-}
-.navbar-brand:hover {
-    color: white;
-}
-
+/* Casillas cuadradas (Bootstrap no tiene una clase para esto) */
 .celda {
     aspect-ratio: 1 / 1;
-    font-size: 2.5rem;
-}
-
-#mensaje-final {
-    color: var(--bs-pink);
-    min-height: 1.5em;
 }

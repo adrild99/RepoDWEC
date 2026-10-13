@@ -16,21 +16,34 @@ $(document).ready(function () {
     let turnoActual = 'X';
     let juegoTerminado = false;
 
-    $('.celda').on('click', function () {
+    celdas.on('click', function () {
         if ($(this).text() !== '' || juegoTerminado) {
             return;
         }
 
         $(this).text(turnoActual);
 
+        // JavaScript decide, Bootstrap pinta: X en azul y O en rojo
+        if (turnoActual === 'X') {
+            $(this).addClass('text-primary');
+        } else {
+            $(this).addClass('text-danger');
+        }
+
         if (hayGanador()) {
-            $('#mensaje-final').text(`¡Ha ganado ${turnoActual}!`);
+            $('#mensaje-final')
+                .text(`¡Ha ganado ${turnoActual}!`)
+                .removeClass('d-none alert-warning')
+                .addClass('alert-success');
             juegoTerminado = true;
             return;
         }
 
         if (tableroLleno()) {
-            $('#mensaje-final').text('Empate');
+            $('#mensaje-final')
+                .text('Empate')
+                .removeClass('d-none alert-success')
+                .addClass('alert-warning');
             juegoTerminado = true;
             return;
         }
@@ -68,10 +81,10 @@ $(document).ready(function () {
     }
 
     $('#btn-reiniciar').on('click', function () {
-        $('.celda').text('');
+        celdas.text('').removeClass('text-primary text-danger');
         turnoActual = 'X';
         juegoTerminado = false;
         $('#turno-actual').text(turnoActual);
-        $('#mensaje-final').text('');
+        $('#mensaje-final').text('').addClass('d-none');
     });
 });
